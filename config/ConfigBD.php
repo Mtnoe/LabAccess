@@ -7,7 +7,7 @@ class ConfigBD
 		$servidor = "localhost"; 
 		$basedatos = "accesolab";
 		$usuario = "root";
-		$contrasenia = "morrigan";
+		$contrasenia = "";
 		try {
             $conexionMysqli = new mysqli($servidor, $usuario, $contrasenia, $basedatos);
             if ($conexionMysqli->connect_errno) {

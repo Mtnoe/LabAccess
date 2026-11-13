@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/accesoLab/resources/php/funcionescomunes.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/labAccessError/resources/php/funcionescomunes.php');
 
 ValidarSesion();
 ?>
@@ -76,7 +76,7 @@ ValidarSesion();
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                     
                     <?php
 

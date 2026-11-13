@@ -23,7 +23,7 @@ $resultado = $UsuarioController->consultarTodosUsuarios();
                 </div>
                 <div class="col-sm-6 text-right" >
                     <a href="#" class="btn btn-primary"
-                       onclick="CargarPagina('main','views/personales/personalesMod.php')">
+                        onclick="CargarPagina('main','views/personales/personalesMod.php')">
                         <i class="fa fa-plus"></i>&nbsp;Agregar
                     </a>
                 </div>

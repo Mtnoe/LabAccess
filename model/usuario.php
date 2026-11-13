@@ -10,7 +10,6 @@ class usuario{
     public $idperfil;
     public $activo;
 
-
     function __construct()
     {
         $this->conexion = new conexion();
