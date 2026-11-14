@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/ReporteController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/ReporteController.php");
 
 $ReporteController = new ReporteController();
 $resultado = $ReporteController->reporteUsoLabPerCarrera($_GET["periodo"]);

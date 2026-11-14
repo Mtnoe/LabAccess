@@ -1,10 +1,10 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/config/ConfigBD.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/conexion.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/usuario.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/DatosUsuario.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/perfil.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/config/ConfigBD.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/conexion.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/usuario.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/DatosUsuario.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/perfil.php");
 
 
 class usuarioController{

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/GeneralController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/GeneralController.php"); // cambiar el nombre de las carpetas por las propias del proyecto
 $GeneralController = new GeneralController();
 $tipoReporte = $_GET["type"];
 //1 -> reporte por Labortatorio

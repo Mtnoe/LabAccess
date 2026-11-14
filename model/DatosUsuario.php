@@ -20,7 +20,7 @@ class DatosUsuario{
                 (id, usuarioid,nombre, primerapellido, segundoapellido, 
                 correopersonal, carreraid, plantelid) 
                 VALUES (NULL,$this->usuarioid,'$this->nombre','$this->primerapellido', '$this->segundoapellido', 
-                 '$this->correopersonal', $this->carreraid,$this->plantelid)";
+                '$this->correopersonal', $this->carreraid,$this->plantelid)";
             //echo $this->conexion->query;
             return $this->conexion->realizarInsert();
         }

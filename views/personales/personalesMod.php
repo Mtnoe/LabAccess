@@ -1,6 +1,6 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/usuarioController.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/GeneralController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/usuarioController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/GeneralController.php");
 $usuarioController = new usuarioController();
 $generalController = new GeneralController();
 if(isset($_REQUEST["usuario"])) {

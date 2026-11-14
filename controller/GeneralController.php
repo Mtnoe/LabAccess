@@ -1,11 +1,11 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/config/ConfigBD.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/conexion.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/plantel.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/carrera.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/periodos.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/materias.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/aulas.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/config/ConfigBD.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/conexion.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/plantel.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/carrera.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/periodos.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/materias.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/aulas.php");
 
 
 class GeneralController

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/usuarioController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/usuarioController.php");
 
 $perfilid = $_SESSION["usuarioPerfil"];
 $usuarioId = $_SESSION["usuarioId"];
@@ -62,7 +62,7 @@ $resultado = $UsuarioController->consultarTodosUsuarios();
                     else{
                         ?>
                         <tr>
-                            <td colspan="8" style="text-align: center"><h1>No Existen Usuarios Para Mostrar</h1></td>
+                            <td colspan="3" style="text-align: center"><h1>No Existen Usuarios Para Mostrar</h1></td>
                         </tr>
                         <?php
                     }
@@ -76,8 +76,11 @@ $resultado = $UsuarioController->consultarTodosUsuarios();
 <script src="plugins/datatables/jquery.dataTables.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <script>
+    //Como las columnas se enumeran desde el 0
+    //  si queremos que ordene por la primera columna (No. Empleado) se debe mandar un 0. 
+    // Si queremos que ordene por el Nombre, manda un 1.
     $(function () {
-        gridTabla('dtListadoUsuarios',4);
+        gridTabla('dtListadoUsuarios',0);
     });
 
     function visualizarUsuario(info) {
