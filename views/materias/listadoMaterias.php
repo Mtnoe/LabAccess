@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/AdmonController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/AdmonController.php");
 
 $AdmonController = new AdmonController();
 $resultado = $AdmonController->obtenerMaterias();
@@ -18,7 +18,7 @@ $resultado = $AdmonController->obtenerMaterias();
                 </div>
                 <div class="col-sm-6 text-right" >
                     <a href="#" class="btn btn-primary"
-                       onclick="CargarPagina('main','views/materias/materiasDatos.php')">
+                        onclick="CargarPagina('main','views/materias/materiasDatos.php')">
                         <i class="fa fa-plus"></i>&nbsp;Agregar
                     </a>
                 </div>
