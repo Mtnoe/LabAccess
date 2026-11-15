@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/AdmonController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/AdmonController.php");
 
 $AdmonController = new AdmonController();
 $resultado = $AdmonController->obtenerPeriodos();
@@ -18,7 +18,7 @@ $resultado = $AdmonController->obtenerPeriodos();
                 </div>
                 <div class="col-sm-6 text-right" >
                     <a href="#" class="btn btn-primary"
-                       onclick="CargarPagina('main','views/periodos/periodosDatos.php')">
+                        onclick="CargarPagina('main','views/periodos/periodosDatos.php')">
                         <i class="fa fa-plus"></i>&nbsp;Agregar
                     </a>
                 </div>
@@ -56,11 +56,11 @@ $resultado = $AdmonController->obtenerPeriodos();
                             <?php
                         }
                     }
-                    else{
+                    else{ // no es necesario mostrar el mensaje de que no hay registros, ya que la tabla se muestra vacía y no es necesario mostrar un mensaje de error
                         ?>
-                        <tr>
+                        <!-- <tr>
                             <td colspan="8" style="text-align: center"><h1>No Existen Periodos Para Mostrar</h1></td>
-                        </tr>
+                        </tr> -->
                         <?php
                     }
                     ?>

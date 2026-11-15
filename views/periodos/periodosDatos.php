@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/AdmonController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/AdmonController.php");
 
 $AdmonController = new AdmonController();
 
