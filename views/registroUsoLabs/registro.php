@@ -1,6 +1,6 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/controller/GeneralController.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/GeneralController.php");
 $generalController = new GeneralController();
 
 ?>
