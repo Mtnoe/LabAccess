@@ -87,11 +87,11 @@ ValidarSesion();
                             case 2:
                                 include_once "menu2.php";
                                 break;
+                            // case 3:
                             case 3:
-                            case 4:
                                 include_once "menu3.php";
                                 break;
-                            case 8:
+                            case 4:
                                 include_once "menu8.php";
                         }
                     ?>

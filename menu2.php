@@ -18,7 +18,7 @@
     <ul class="nav nav-treeview">
         <li class="nav-item">
             <a href="#" class="nav-link"
-               onclick="CargarPagina('main','views/personales/personalesMod.php?usuario=<?php echo base64_encode($_SESSION["usuarioId"]); ?>')">
+                onclick="CargarPagina('main','views/personales/personalesMod.php?usuario=<?php echo base64_encode($_SESSION["usuarioId"]); ?>')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Datos Personales</p>
             </a>
