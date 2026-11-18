@@ -1,6 +1,6 @@
 <?php
 class periodos{
-
+// se creo la tabla periodos en la base de datos para el campo de administrador/ Periodos
     public $id, $nombre, $anio, $activo;
     private $conexion;
     function __construct()

@@ -37,22 +37,22 @@ $resultado = $AdmonController->obtenerPeriodos();
                     </thead>
                     <tbody>
                     <?php
-                    if($resultado->num_rows >0) {
-                        while ($row = $resultado->fetch_assoc()) {
-                            ?>
-                            <tr>
-                                <td><?php echo $row["nombre"]; ?></td>
-                                <td><?php echo $row["anio"]; ?></td>
-                                <td><?php echo $row["estado"]; ?></td>
-                                <td>
-                                    <div class="btn-group-vertical">
-                                        <button type="button" class="btn btn-outline-success"
-                                                onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
-                                            <i class="fa fa-user-edit"></i>&nbsp;Modificar
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                        if($resultado->num_rows >0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row["nombre"]; ?></td>
+                                    <td><?php echo $row["anio"]; ?></td>
+                                    <td><?php echo $row["estado"]; ?></td>
+                                    <td>
+                                        <div class="btn-group-vertical">
+                                            <button type="button" class="btn btn-outline-success"
+                                                    onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
+                                                <i class="fa fa-user-edit"></i>&nbsp;Modificar
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
                             <?php
                         }
                     }
