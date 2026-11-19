@@ -39,7 +39,7 @@ if(isset($_REQUEST["periodo"])) {
                                 <select id="cbAnio" name="cbAnio" class="form-control">
                                     <?php
                                         $datos = "";
-                                        for($i=date(Y);$i<=date(Y)+2;$i++) {
+                                        for($i=date('Y');$i<=date('Y')+2;$i++) { // -> hacia falta las comillas simples en la Y
                                             $datos .= "<option value='" . $i . "'>" . $i . "</option>";
                                         }
                                         echo $datos;
