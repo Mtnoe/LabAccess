@@ -52,7 +52,7 @@ class DatosUsuario{
                     $this->nombrecompleto = $row["nombre"].' '.$row["primerapellido"].' '.$row["segundoapellido"];
                     $this->carreraid = $row["carreraid"];
                     $this->plantelid = $row["plantelid"];
-                    $this->correooficial = $row["correopersonal"];
+                    $this->correopersonal = $row["correopersonal"];
                     $this->carrera = $row["carrera"];
                     $this->plantel = $row["plantel"];
                 return true;

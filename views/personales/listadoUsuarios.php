@@ -19,7 +19,7 @@ $resultado = $UsuarioController->consultarTodosUsuarios();
         <h4 class="card-header">
             <div class="row">
                 <div class="col-sm-6" >
-                    <h4>Listado de Usuarios</h4>
+                    <div class="card-header">Listado de Usuarios</div>
                 </div>
                 <div class="col-sm-6 text-right" >
                     <a href="#" class="btn btn-primary"

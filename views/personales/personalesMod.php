@@ -6,6 +6,7 @@ $generalController = new GeneralController();
 if(isset($_REQUEST["usuario"])) {
     $usuarioId = base64_decode($_REQUEST["usuario"]);
     $usuarioController->consultarDatosUsuario($usuarioId);
+
 }else{
     $usuarioId = 0;
 }
@@ -70,9 +71,9 @@ if(isset($_REQUEST["usuario"])) {
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group"> <!--se cambio el nombre a correopersonal-->
                                 <label for="txtEmail">Correo Electr&oacute;nico Oficial</label>
-                                <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Ingrese su correo electr&oacute;nico" maxlength="100" value="<?php echo $usuarioController->objDatosUsuario->correooficial;?>" required >
+                                <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Ingrese su correo electr&oacute;nico" maxlength="100" value="<?php echo $usuarioController->objDatosUsuario->correopersonal;?>" required > 
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -130,10 +131,8 @@ if(isset($_REQUEST["usuario"])) {
     $(document).ready(function() {
         validarFormularioUsuario();
 
-        <?php
-            if($usuarioId>0){
-                echo "$('#cbCarrera').val(".$usuarioController->objDatosUsuario->carreraid.")";
-            }
-        ?>
+        <?php if ($usuarioId > 0 && $carreraIdVal !== ''): ?>
+            $('#cbCarrera').val(<?php echo json_encode($carreraIdVal); ?>);
+        <?php endif; ?>
     });
 </script>
