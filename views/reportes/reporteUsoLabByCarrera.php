@@ -43,11 +43,12 @@ $totalHoras = 0;
                             <?php
                         }
                     }
+                    // no hace falta la funcion del else
                     else{
                         ?>
-                        <tr>
-                            <td colspan="8" style="text-align: center"><h1>No Existen Datos Para Mostrar</h1></td>
-                        </tr>
+                        <!-- <tr> 
+                            <td colspan="4" style="text-align: center"><h1>No Existen Datos Para Mostrar</h1></td>
+                        </tr> -->
                         <?php
                     }
                     ?>
