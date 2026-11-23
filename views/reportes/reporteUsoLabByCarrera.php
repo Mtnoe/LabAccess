@@ -9,7 +9,7 @@ $totalHoras = 0;
 ?>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" id="btnExportar" class=" btn btn-success" onclick="exportTableToExcel('dtListadoReporte','reporteByCarrera.xls')">
+                    <button type="button" id="btnExportar" class=" btn btn-success" onclick="exportTableToExcel('dtListadoReporte','reporteByCarrera.xlsx')">
                         <i class="fa fa-file"></i>&nbsp;Exportar a Excel </button>
                 </div>
             </div>
