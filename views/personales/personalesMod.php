@@ -28,7 +28,7 @@ if(isset($_REQUEST["usuario"])) {
                             <div class="form-group">
                                 <label for="txtUsuario">Usuario</label>
                                 <input type="text" class="form-control" id="txtUsuario" name="txtUsuario" placeholder="Ingrese su nombre" maxlength="150" value="<?php echo htmlspecialchars($usuarioController->objUsuario->usuario ?? '', ENT_QUOTES, 'UTF-8'); ?>" required >
-                                <input id="usuarioId" name="usuarioId" type="hidden" value="<?php echo base64_encode($usuarioId); ?>">
+                                <input id="usuarioId" name="usuarioId" type="hidden" value="<?php echo htmlspecialchars((string)$usuarioId ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                             </div>
                         </div>
                         <div class="col-md-4">
