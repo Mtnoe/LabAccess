@@ -47,7 +47,7 @@ class periodos{
         try{
             $this->conexion->query = "SELECT C.id, C.nombre, C.anio, C.activo
                                             
-                                      FROM ".$this->conexion->nombreBD.".periodos AS C 
+                                    FROM ".$this->conexion->nombreBD.".periodos AS C 
                                         WHERE C.id = $idPeriodo ";
             $resultado = $this->conexion->consultarDatos();
             if($resultado->num_rows >0) {
@@ -69,7 +69,7 @@ class periodos{
     }
 
 
-
+// solo consiulta los periodos que esten activos (1)
     function consultarPeriodos(){
         try{
             $this->conexion->query = "SELECT C.id, C.nombre, C.anio, C.activo,

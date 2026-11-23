@@ -1,8 +1,8 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/config/ConfigBD.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/conexion.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/accesoLab/model/bitacoraLab.php");
-
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/config/ConfigBD.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/conexion.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/model/bitacoraLab.php");
+// se cambiaron el nombre de las carpetas
 
 class RegistroLabController
 {

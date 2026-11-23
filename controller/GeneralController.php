@@ -60,7 +60,7 @@ class GeneralController
             $data = $objPeriodos->consultarPeriodosByActivo($activo);
             $datos = "";
             while ($row = $data->fetch_assoc()){
-                $datos .= "<option value='".$row["id"]."'>".$row["periodo"]."</option>";
+                $datos .= "<option value='".(int)$row["id"]."'>".htmlspecialchars($row["periodo"])."</option>"; // Convertir a entero para evitar problemas de tipo
             }
             return $datos;
         }

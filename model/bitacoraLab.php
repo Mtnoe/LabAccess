@@ -22,9 +22,9 @@ class bitacoraLab
                 (id, fecha, horaingreso, horasalida, profesor, idcarrera, idmateria, 
                     cantalumnos, nombrepractica, idperiodo, idaula) 
                 VALUES (NULL,NOW(),$this->horaingreso,$this->horasalida, $this->profesor, 
-                 $this->idcarrera, $this->idmateria,$this->cantalumnos,'$this->nombrepractica', 
-                 (SELECT P.id FROM " . $this->conexion->nombreBD . ".periodos as P WHERE p.activo=1),
-                 $this->idaula)";
+                    $this->idcarrera, $this->idmateria,$this->cantalumnos,'$this->nombrepractica', 
+                    (SELECT P.id FROM " . $this->conexion->nombreBD . ".periodos as P WHERE P.activo=1),
+                    $this->idaula)";
             //echo $this->conexion->query;
             return $this->conexion->realizarInsert();
         } catch (Exception $x) {

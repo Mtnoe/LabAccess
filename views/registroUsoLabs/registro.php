@@ -28,7 +28,7 @@ $generalController = new GeneralController();
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="txtFecha">Fecha de Sesi&oacute;n</label>
-                                <input type="text" class="form-control" id="txtFecha" name="txtFecha" placeholder="Ingrese su " value="<?php echo date("d/m/Y"); ?>" maxlength="100" disabled>
+                                <input type="text" class="form-control" id="txtFecha" name="txtFecha" placeholder="Ingrese su " value="<?php echo date("d/m/Y"); ?>" maxlength="100" disabled >
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -93,6 +93,7 @@ $generalController = new GeneralController();
                             <div class="form-group">
                                 <label for="cbPeriodo">Periodo</label>
                                 <select class="form-control" id="cbPeriodo" name="cbPeriodo" required>
+                                    <option value="">Seleccione un periodo</option> <!--solo se agrego un option-->
                                     <?php
                                     echo $generalController->obtenerPeriodos(1);
                                     ?>
