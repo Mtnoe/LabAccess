@@ -18,6 +18,19 @@ class usuario{
     function InsertarUsuario(){
         try
         {
+            // Validar que los datos no estén vacíos
+            if (empty(trim($this->usuario))) {
+                throw new Exception("El usuario no puede estar vacío.");
+            }
+
+            if (empty($this->contrasena)) {
+                throw new Exception("La contraseña no puede estar vacía.");
+            }
+
+            if (empty($this->idperfil) || !is_numeric($this->idperfil)) {
+                throw new Exception("El perfil del usuario no es válido.");
+            }
+            
             $this->conexion->query = "INSERT INTO ".$this->conexion->nombreBD.".usuarios
                 (id, usuario, contrasena, idperfil, activo) 
                 VALUES (NULL,'$this->usuario','$this->contrasena', $this->idperfil, 1)";
