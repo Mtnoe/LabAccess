@@ -73,12 +73,12 @@ $control = 6;
                                 <?php
                             }
                         }
-                    }
+                    } // no hace falta la funcion del else
                     else{
                         ?>
-                        <tr>
+                        <!-- <tr>
                             <td colspan="8" style="text-align: center"><h1>No Existen Datos Para Mostrar</h1></td>
-                        </tr>
+                        </tr> -->
                         <?php
                     }
                     ?>

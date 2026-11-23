@@ -25,7 +25,15 @@ class reportes{
 
     function consultarUsoLabPerLaboratorio($periodoId){
         try{
-            $this->conexion->query = "";
+            $this->conexion->query = "
+                SELECT b.idaula,
+                    COUNT(*) AS total_usos,
+                    COALESCE(SUM(b.cantalumnos), 0) AS total_alumnos,
+                    COALESCE(SUM(b.horasalida - b.horaingreso), 0) AS total_horas
+                FROM ".$this->conexion->nombreBD.".bitacoralab b
+                WHERE b.idperiodo = {$periodoId}
+                GROUP BY b.idaula
+                ORDER BY b.idaula ASC";
             return $this->conexion->consultarDatos();
         }
         catch (Exception $x)
