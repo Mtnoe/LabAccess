@@ -37,33 +37,36 @@ $resultado = $AdmonController->obtenerPeriodos();
                     </thead>
                     <tbody>
                     <?php
-                        if($resultado->num_rows >0) {
+                        if ($resultado && $resultado->num_rows > 0) {
+                            $anioActual = (int)date('Y');
                             while ($row = $resultado->fetch_assoc()) {
+                                $anioPeriodo = (int)$row["anio"];
+                                $esAnterior = ($anioPeriodo < $anioActual);
                                 ?>
                                 <tr>
-                                    <td><?php echo $row["nombre"]; ?></td>
-                                    <td><?php echo $row["anio"]; ?></td>
-                                    <td><?php echo $row["estado"]; ?></td>
+                                    <td><?php echo htmlspecialchars($row["nombre"], ENT_QUOTES, 'UTF-8'); ?></td>
+                                    <td><?php echo $anioPeriodo; ?></td>
+                                    <td><?php echo htmlspecialchars($row["estado"], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td>
                                         <div class="btn-group-vertical">
-                                            <button type="button" class="btn btn-outline-success"
-                                                    onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
-                                                <i class="fa fa-user-edit"></i>&nbsp;Modificar
-                                            </button>
+                                            <?php if ($esAnterior): ?>
+                                                <button type="button" class="btn btn-outline-secondary" disabled title="No se pueden modificar periodos anteriores al año actual">
+                                                    <i class="fa fa-user-edit"></i>&nbsp;Modificar
+                                                </button>
+                                            <?php else: ?>
+                                                <button type="button" class="btn btn-outline-success"
+                                                        onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
+                                                    <i class="fa fa-user-edit"></i>&nbsp;Modificar
+                                                </button>
+                                            <?php endif; ?>
                                         </div>
                                     </td>
                                 </tr>
-                            <?php
+                                <?php
+                            }
                         }
-                    }
-                    else{ // no es necesario mostrar el mensaje de que no hay registros, ya que la tabla se muestra vacía y no es necesario mostrar un mensaje de error
                         ?>
-                        <!-- <tr>
-                            <td colspan="8" style="text-align: center"><h1>No Existen Periodos Para Mostrar</h1></td>
-                        </tr> -->
-                        <?php
-                    }
-                    ?>
+                
                     </tbody>
                 </table>
             </div>

@@ -55,36 +55,41 @@ class AdmonController{
         }
     }
 
-    function modificarPeriodo(){
-        try {
-            try {
-                $model = new periodos();
-                $model->nombre = $_POST["cbPeriodo"];
-                $model->anio = $_POST["cbAnio"];
-                $model->id = base64_decode($_POST["periodoId"]);
-                $model->activo = $_POST["cbActivo"];
-                $id = $model->ModificarPeriodos();
-                if ($id > 0):
-                    $obJson['resultado'] = "success";
-                    $obJson['mensaje'] = "Operaci&oacute;n realizada.";
-                else:
-                    $obJson['resultado'] = "error";
-                    $obJson['mensaje'] = "Error al generar el periodo";
-                endif;
-                print json_encode($obJson);
-            }
-            catch  (Exception $e){
+function modificarPeriodo(){
+    try {
+        $model = new periodos();
+        $model->nombre = $_POST["cbPeriodo"];
+        $model->anio = (int)$_POST["cbAnio"];
+        $model->id = (int)base64_decode($_POST["periodoId"]);
+        $model->activo = (int)$_POST["cbActivo"];
+
+        // Si se intenta dejar el periodo como CERRADO (0), verificar que exista otro ACTIVO (1)
+        if ($model->activo === 0 && $model->id > 0) {
+            $otrosAbiertos = $model->contarOtrosPeriodosAbiertos($model->id);
+            if ($otrosAbiertos === 0) {
                 $obJson['resultado'] = "error";
-                $obJson['mensaje'] = "Error al procesar la solicitud";
+                $obJson['mensaje'] = "Debe existir siempre un periodo abierto. No puedes cerrar este periodo si no hay otro periodo abierto.";
                 print json_encode($obJson);
+                return;
             }
         }
-        catch  (Exception $e){
+
+        $id = $model->ModificarPeriodos();
+        if ($id > 0):
+            $obJson['resultado'] = "success";
+            $obJson['mensaje'] = "Operaci&oacute;n realizada.";
+        else:
             $obJson['resultado'] = "error";
-            $obJson['mensaje'] = "Error al procesar la solicitud";
-            print json_encode($obJson);
-        }
+            $obJson['mensaje'] = "Error al modificar el periodo";
+        endif;
+        print json_encode($obJson);
     }
+    catch (Exception $e){
+        $obJson['resultado'] = "error";
+        $obJson['mensaje'] = "Error al procesar la solicitud";
+        print json_encode($obJson);
+    }
+}
 
     function modificarMateria(){
         try {

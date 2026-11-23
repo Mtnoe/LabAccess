@@ -24,6 +24,24 @@ class periodos{
         }
     }
 
+    function contarOtrosPeriodosAbiertos($idExcluir){
+        try{
+            $idExcluir = (int)$idExcluir;
+            $this->conexion->query = "SELECT COUNT(*) AS total 
+                                    FROM ".$this->conexion->nombreBD.".periodos 
+                                    WHERE id != $idExcluir AND activo = 1";
+            $resultado = $this->conexion->consultarDatos();
+            if($resultado && $resultado->num_rows > 0){
+                $row = $resultado->fetch_assoc();
+                return (int)($row["total"] ?? 0);
+            }
+            return 0;
+        }
+        catch (Exception $x)
+        {
+            throw $x;
+        }
+    }
     function ModificarPeriodos(){
         try
         {

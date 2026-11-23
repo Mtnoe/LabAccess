@@ -32,7 +32,7 @@ a. Cada Select o ComboBox debe tener la opción para filtrar las opciones que ma
 
 6. Registro uso de laboratorio:
 
-a. Cuando se cargue la pantalla debe aparecer la fecha en formato dd/MM/yyyy en el campo de fecha de sesión. No debe permitir edición. Si el dato no se genera no debe permitir guardar.
+--a. Cuando se cargue la pantalla debe aparecer la fecha en formato dd/MM/yyyy en el campo de fecha de sesión. No debe permitir edición. Si el dato no se genera no debe permitir guardar.
 
 b. Cuando se cargue la pantalla debe aparecer en el campo Clave Docente, el nombre de usuario con que se loguea la cuenta. No debe permitir edición. Si el dato no existe no debe permitir guardar.
 
