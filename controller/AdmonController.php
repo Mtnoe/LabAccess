@@ -156,6 +156,7 @@ function modificarPeriodo(){
             echo $e->getMessage();
         }
     }
+    
 }
 
 

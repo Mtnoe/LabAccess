@@ -48,6 +48,14 @@
                 <p>Materias</p>
             </a>
         </li>
+            <!--Boton de uso de laboratorios-->
+        <li class="nav-item">
+            <a href="#" class="nav-link"
+                onclick="CargarPagina('main','views/aulas/aulaLabs.php')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Laboratorios</p>
+            </a>
+        </li>
     </ul>
 </li>
 
