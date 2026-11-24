@@ -82,7 +82,8 @@ class materias{
             $this->conexion->query = "SELECT C.id, C.clave,C.nombre, C.idcarrera, C.activo,
                                         (SELECT PE.nombre FROM ".$this->conexion->nombreBD.".carreras AS PE
                                             WHERE PE.id = C.idcarrera) AS carrera
-                                      FROM ".$this->conexion->nombreBD.".materias AS C ";
+                                        FROM ".$this->conexion->nombreBD.".materias AS C 
+                                        WHERE C.id = $idMateria";
             //echo $this->conexion->query;
             $resultado = $this->conexion->consultarDatos();
             if($resultado->num_rows >0) {
