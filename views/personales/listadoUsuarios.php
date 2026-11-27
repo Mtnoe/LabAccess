@@ -1,11 +1,17 @@
 <?php
 session_start();
 
+if (!isset($_SESSION["usuarioId"]) || ($_SESSION["usuarioPerfil"] ?? null) != 1){
+    http_response_code(403);
+    exit("Acceso denegado.");
+}
+
 include_once($_SERVER['DOCUMENT_ROOT']."/labAccessError/controller/usuarioController.php");
 
-$perfilid = $_SESSION["usuarioPerfil"];
-$usuarioId = $_SESSION["usuarioId"];
-//$tipoSesion = 2;
+
+// $perfilid = $_SESSION["usuarioPerfil"];
+// $usuarioId = $_SESSION["usuarioId"];
+// //$tipoSesion = 2;
 //if($perfilid==4){$tipoSesion=1;}
 
 $UsuarioController = new usuarioController();

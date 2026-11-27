@@ -5,7 +5,7 @@
  * Date: 12/02/2022
  * Time: 10:52
  */
-
+ValidarSesion();
 ?>
 <li class="nav-item has-treeview">
     <a href="#" class="nav-link">
