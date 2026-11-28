@@ -37,35 +37,35 @@ $resultado = $AdmonController->obtenerPeriodos();
                     </thead>
                     <tbody>
                     <?php
-                        if ($resultado && $resultado->num_rows > 0) {
-                            $anioActual = (int)date('Y');
-                            while ($row = $resultado->fetch_assoc()) {
-                                $anioPeriodo = (int)$row["anio"];
-                                $esAnterior = ($anioPeriodo < $anioActual);
-                                ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($row["nombre"], ENT_QUOTES, 'UTF-8'); ?></td>
-                                    <td><?php echo $anioPeriodo; ?></td>
-                                    <td><?php echo htmlspecialchars($row["estado"], ENT_QUOTES, 'UTF-8'); ?></td>
-                                    <td>
-                                        <div class="btn-group-vertical">
-                                            <?php if ($esAnterior): ?>
-                                                <button type="button" class="btn btn-outline-secondary" disabled title="No se pueden modificar periodos anteriores al año actual">
-                                                    <i class="fa fa-user-edit"></i>&nbsp;Modificar
-                                                </button>
-                                            <?php else: ?>
-                                                <button type="button" class="btn btn-outline-success"
-                                                        onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
-                                                    <i class="fa fa-user-edit"></i>&nbsp;Modificar
-                                                </button>
-                                            <?php endif; ?>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php
-                            }
+                    if ($resultado && $resultado->num_rows > 0) {
+                        $anioLimite = 2024;
+                        while ($row = $resultado->fetch_assoc()) {
+                            $anioPeriodo = (int)($row["anio"] ?? 0);
+                            $esAnterior = ($anioPeriodo <= $anioLimite);
+                            ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($row["nombre"] ?? '', ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?php echo $anioPeriodo; ?></td>
+                                <td><?php echo htmlspecialchars($row["estado"] ?? '', ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td>
+                                    <div class="btn-group-vertical">
+                                        <?php if ($esAnterior): ?>
+                                            <button type="button" class="btn btn-outline-secondary" disabled title="No se pueden modificar periodos anteriores a 2024">
+                                                <i class="fa fa-user-edit"></i>&nbsp;Modificar
+                                            </button>
+                                        <?php else: ?>
+                                            <button type="button" class="btn btn-outline-success"
+                                                    onclick="visualizarPeriodo('<?php echo base64_encode($row["id"]); ?>')">
+                                                <i class="fa fa-user-edit"></i>&nbsp;Modificar
+                                            </button>
+                                        <?php endif; ?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php
                         }
-                        ?>
+                    }
+                    ?>
                 
                     </tbody>
                 </table>
